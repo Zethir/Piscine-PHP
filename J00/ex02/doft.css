@@ -1,0 +1,120 @@
+html {
+	background-color: #514F52;
+}
+
+.topmodule {
+	width: 1423px;
+	height: 138px;
+	background-color: #909090;
+	border-radius: 10px 10px 10px 10px;
+	margin: 15px auto;
+	box-shadow: 5px 5px 5px 5px #212121;
+	clear: both;
+}
+
+.bigbox {
+	width: 1366px;
+	height: 582px;
+	margin: 20px auto;
+	clear: both;
+}
+
+.leftmodule {
+	float: left;
+	width: 142px;
+	height: 425px;
+	background-color: #909090;
+	border-radius: 10px 10px 10px 10px;
+	box-shadow: 5px 5px 5px 5px #212121;
+	clear: both;
+}
+
+.centermodule {
+	float: left;
+	width: 1022px;
+	height: 583px;
+	background-color: #909090;
+	border-radius: 10px 10px 10px 10px;
+	box-shadow: 5px 5px 5px 5px #212121;
+	margin: 0px 30px;
+}
+
+.rightmodule {
+	float: left;
+	width: 142px;
+	height: 425px;
+	background-color: #909090;
+	border-radius: 10px 10px 10px 10px;
+	box-shadow: 5px 5px 5px 5px #212121;
+}
+
+.day42 {
+	float: left;
+	width: 435px;
+	height: 122px;
+	margin: 10px;
+}
+
+.reload {
+	float: right;
+	width: 20px;
+	height: 20px;
+	margin: 10px;
+}
+
+.close {
+	clear: right;
+	float: right;
+	width: 20px;
+	height: 20px;
+	margin-right: 10px;
+	margin-top: 70px;
+}
+
+.loupe {
+	float: right;
+	width: 238px;
+	height: 136px;
+	margin-top: -20px;
+	margin-right: 10px;
+}
+
+.leftbox {
+	float: left;
+	width: 70px;
+	height: 70px;
+	margin-left: 35px;
+	margin-top: 10px;
+}
+
+.cluster {
+	width: 1000px;
+	height: 562px;
+	margin-left: 8px;
+	margin-top: 8px;
+}
+
+.imgbook {
+	float: left;
+	width: 65px;
+	height: 85px;
+	margin-left: 35px;
+	margin-top: 20px;
+}
+
+.imgtowel {
+	float: left;
+	width: 50px;
+	height: 40px;
+	margin-left: 40px;
+	margin-top: 10px;
+}
+
+.imgbrick {
+	float: left;
+	width: 120px;
+	height: 70px;
+	margin-left: 10px;
+	margin-top: 10px;
+	background-image: url("./resources/brick.jpg");
+}
