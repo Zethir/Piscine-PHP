@@ -1,0 +1,33 @@
+body {
+	background-color: #151515;
+	margin: auto;
+}
+
+table {
+	font-family: arial;
+	color: black;
+	width: 80%;
+	height: 20%;
+	font-size: 1.2vw;
+}
+
+td {
+	width: 70px;
+	height: 40px;
+}
+
+td:hover {
+	color:white;
+}
+.GREEN {background-color: green}
+.RED {background-color: red}
+.BROWN {background-color: #8A4B08}
+.PINK {background-color: #FE2E9A}
+.LIGHTPURPLE {background-color: #F5A9F2}
+.PURPLE {background-color: purple}
+.DARKGREEN {background-color: #38610B}
+.TURQUOISE {background-color: #01DFD7}
+.BLUE {background-color: #0040FF}
+.ORANGE {background-color: #FF8000}
+.LIGHTORANGE {background-color: #FE9A2E}
+.SIZE {font-size: 0.8vw}
