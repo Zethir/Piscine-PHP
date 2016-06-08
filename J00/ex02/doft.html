@@ -6,7 +6,7 @@
 <!-- By: cboussau <marvin@42.fr>                    +#+  +:+       +#+       -->
 <!--                                              +#+#+#+#+#+   +#+          -->
 <!-- Created: 2016/06/07 18:50:51 by cboussau          #+#    #+#            -->
-<!-- Updated: 2016/06/07 22:08:57 by cboussau         ###   ########.fr      -->
+<!-- Updated: 2016/06/08 16:42:50 by cboussau         ###   ########.fr      -->
 <!--                                                                         -->
 <!-- *********************************************************************** -->
 
@@ -18,27 +18,49 @@
 	</head>
 	<body>
 		<div class="topmodule">
-			<img src="resources/day_of_the_42.png" title="Day-Of-the-42" class="day42">
-			<img src="resources/reload.png" title="Reload" class="reload">
-			<img src="resources/close.gif" title="Close" class="close">
-			<img src="resources/loupe.png" title="Loupe" class="loupe">
+			<img src="resources/day_of_the_42.png" alt="Day-Of-the-42" class="day42">
+			<a href="http://www.disney.com">
+				<img src="resources/reload.png" alt="Recommencer au d&eacute;but" class="reload">
+			</a>
+			<a href="http://www.relaischateaux.com">
+				<img src="resources/close.gif" alt="D&eacute;connecter" class="close">
+			</a>
+			<img src="resources/loupe.png" alt="Loupe" class="loupe">
 		</div>
 		<div class="bigbox">
 			<div class="leftmodule">
-				<img src="resources/arrow.png" title="Avancer" class="leftbox">
-				<img src="resources/main.png" title="Prendre" class="leftbox">
-				<img src="resources/oeil.png" title="Regarder" class="leftbox">
-				<img src="resources/outil.png" title="Utiliser" class="leftbox">
-				<img src="resources/chat-icon.png" title="Parler" class="leftbox">
+				<img src="resources/arrow.png" alt="Avancer" class="leftbox">
+				<img src="resources/main.png" alt="Prendre" class="leftbox">
+				<img src="resources/oeil.png" alt="Regarder" class="leftbox oeil">
+				<img src="resources/outil.png" alt="Utiliser" class="leftbox">
+				<img src="resources/chat-icon.png" alt="Parler" class="leftbox">
 			</div>
 			<div class="centermodule">
-				<img src="resources/cluster.jpg" title="cluster" class="cluster">
+				<map name="Cluster">
+					<area shape="rect" href="http://www.ikea.com" title="Ikea" target="_blank" coords="550,370,700,530">
+					<area shape="rect" href="http://www.apple.com" title="Apple" target="_blank" coords="980,470,785,300">
+				</map>
+				<img usemap="#Cluster" src="resources/cluster.jpg" alt="cluster" class="cluster">
 			</div>
 			<div class="rightmodule">
-				<img src="resources/book.png" title="book" class="imgbook">
-				<img src="resources/towel.png" title="towel" class="imgtowel">
+				<img src="resources/book.png" alt="book" class="imgbook">
+				<img src="resources/towel.png" alt="towel" class="imgtowel">
 				<div class="imgbrick"></div>
 			</div>
 		</div>
+		<div class="chat">
+			<font size="3px" face="verdana">
+				<p>
+				Vous
+				<font size="6px" face="sansserif">
+					<b>entrez</b>
+				</font>
+				alors dans une grande piece remplie d'<span class="ordi">ordinateurs</span>...<br /><i>- Bonjour, vous &ecirctes nouveaux ici ?</i>
+				<span class="answer">
+					<input type="text" size="70">
+				</span>
+				<input type="submit" value"repondre">
+				</p>
+			</font>
 	</body>
 </html>

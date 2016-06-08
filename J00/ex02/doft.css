@@ -87,6 +87,10 @@ html {
 	margin-top: 10px;
 }
 
+.oeil {
+	border: 5px solid red;
+}
+
 .cluster {
 	width: 1000px;
 	height: 562px;
@@ -118,3 +122,20 @@ html {
 	margin-top: 10px;
 	background-image: url("./resources/brick.jpg");
 }
+
+.chat {
+	float: left;
+	width: 520px;
+	height: 163px;
+	background-color: #88FF89;
+	border-radius: 10px 10px 10px 10px;
+	box-shadow: 5px 5px 5px 5px #212121;
+	margin-left: 10%;
+	margin-top: -100px;
+}
+
+p {margin: 10px;}
+
+.ordi {text-shadow: 5px 5px 3px #BA8047;}
+
+.answer {line-height: 4px;
