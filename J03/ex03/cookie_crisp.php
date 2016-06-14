@@ -1,12 +1,13 @@
 <?php
-	if (isset($_GET["action"]))
+	if ($_GET["action"] != NULL)
 		$action = $_GET["action"];
 
-	if (isset($_GET["name"]))
+	if ($_GET["name"] != NULL)
 		$name = $_GET["name"];
 
-	if (isset($_GET["value"]))
+	if ($_GET["value"] != NULL)
 		$value = $_GET["value"];
+	
 	if ($name == NULL)
 		echo "Il faut entrer un nom de cookie";
 
