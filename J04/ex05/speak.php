@@ -22,6 +22,8 @@ if ($_POST['submit'] == "Envoyer" && $_POST['text'] != "")
 		if (!file_exists("../private/"))
 			mkdir("../private/");
 		$tab = array($array);
+		$tab = serialize($tab);
+		file_put_contents($filename, $tab);
 	}
 	else
 	{
@@ -29,9 +31,9 @@ if ($_POST['submit'] == "Envoyer" && $_POST['text'] != "")
 		flock($fp, LOCK_SH | LOCK_EX);
 		$tab = unserialize(file_get_contents($filename));
 		$tab[] = $array;
+		$tab = serialize($tab);
+		file_put_contents($filename, $tab);
 	}
-	$tab = serialize($tab);
-	file_put_contents($filename, $tab);
 	$fp = fopen($filename, "r+");
 	flock($fp, LOCK_SH | LOCK_EX);
 	fclose($fp);
@@ -39,20 +41,23 @@ if ($_POST['submit'] == "Envoyer" && $_POST['text'] != "")
 ?>
 <head>
 <style>
-body {margin: 0;}
+body {
+	margin: 0;
+	padding: 5px 5px 5px 5px;
+}
 
 textarea {
 	width: 80%;
 	height: 100%;
 	margin: auto;
 	resize:none;
-	border: 1px solid black;
+	border: 1px solid white;
 	border-radius: 0px 0px 0px 10px;
-	background-image: linear-gradient(top, #F6AD1A 20%, #9F391A  130%);
-	background-image: linear-gradient(to bottom, #F6AD1A 20%, #9F391A 130%);
-	font-size: 1.2vw;
+	background-color: black;
+	font-size: 15px;
 	font-family: arial;
 	font-weight: lighter;
+	color: white;
 }
 
 form {
@@ -65,17 +70,18 @@ input {
 	float: right;
 	width: 10%;
 	height: 100%;
-	background-color: #65537A;
+	background-color: black;
 	border-radius: 0px 0px 10px 0px;
 	position: relative;
-	font-size: 1.2vw;
+	font-size: 15px;
 	font-family: arial;
 	font-weight: lighter;
 	z-index: 2;
+	color: white;
 }
+</style>
 <script langage="javascript">top.frames['chat'].location = 'chat.php';</script>
 </head>
-</style>
 <form action="speak.php" method="post">
 	<textarea name="text" placeholder="Entrez votre message ici."></textarea>
 	<input type="submit" name="submit" value="Envoyer">

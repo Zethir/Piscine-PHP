@@ -12,5 +12,5 @@ else
 	echo "ERROR\n";
 }
 ?>
-<iframe name='char' src='chat.php' width='100%' height='550px' style='border:0;'></iframe>
-<iframe name='speak' src='speak.php' width='100%' height='50px' style='border:0;'></iframe>
+<iframe name="chat" src="chat.php" width="100%" height="550px" style="border-radius:10px 10px 0px 0px;"></iframe>
+<iframe name="speak" src="speak.php" width="100%" height="50px" style="border:0;"></iframe>
