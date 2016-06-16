@@ -8,15 +8,12 @@ body {
 }
 </style>
 <?php
-	$filename = '../private/chat';
-	if (!file_exists($filename) || !file_exists("../private/"))
-		return ;
-	$tab = unserialize(file_get_contents($filename));
-	$time = date($tab['time']);
-	$login = $tab['login'];
-	$msg = $tab['msg'];
-	echo "hello\n";
-	echo $time . "" . "<b>" . $login ."</b>". ":" . $msg . "<br />";
+$filename = '../private/chat';
+if (!file_exists($filename) || !($tab = unserialize(file_get_contents($filename))|| !file_exists("../private/")))
+	return ;
+$tab = unserialize(file_get_contents($filename));
+$login = $tab[0]['login'];
+$time = date($tab[0]['time']);
+$msg = $tab[0]['msg'];
+echo $time . "" . "<b>" . $login ."</b>". ":" . $msg . "<br />";
 ?>
-
-
