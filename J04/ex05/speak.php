@@ -43,7 +43,6 @@ if ($_POST['submit'] == "Envoyer" && $_POST['text'] != "")
 <style>
 body {
 	margin: 0;
-	padding: 5px 5px 5px 5px;
 }
 
 textarea {
@@ -54,10 +53,11 @@ textarea {
 	border: 1px solid white;
 	border-radius: 0px 0px 0px 10px;
 	background-color: black;
-	font-size: 15px;
+	font-size: 13px;
 	font-family: arial;
 	font-weight: lighter;
 	color: white;
+	padding: 5px 5px 5px 5px;
 }
 
 form {
@@ -73,7 +73,7 @@ input {
 	background-color: black;
 	border-radius: 0px 0px 10px 0px;
 	position: relative;
-	font-size: 15px;
+	font-size: 13px;
 	font-family: arial;
 	font-weight: lighter;
 	z-index: 2;
