@@ -13,12 +13,12 @@
 					"Septembre" => 9,
 					"Octobre" => 10,
 					"Novembre" => 11,
-					"Decembre" => 12);
+					"Decembre" => 12,);
 		return $tab[$month];
 	}
 	date_default_timezone_set('Europe/Paris');
-	if (preg_match("/(Lundi|Mardi|Mercredi|Jeudi|Vendredi|Samedi|Dimanche) ([1-2][0-9]|[1-9]|[3][0-1]|[0][1-9]) (Janvier|Fevrier|Mars|Avril|Mai|Juin|Juillet|Aout|Septembre|Octobre|Novembre|Decembre) ([0-9]{4}) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9])/", $argv[1], $res))
-		echo mktime($res[5], $res[6], $res[7], change_month($res[3]), $res[2], $res[4]). "\n";
+	if (preg_match("/(Lundi|Mardi|Mercredi|Jeudi|Vendredi|Samedi|Dimanche|lundi|mardi|mercredi|jeudi|vendredi|samedi|dimanche) ([1-2][0-9]|[1-9]|[3][0-1]|[0][1-9]) (Janvier|Fevrier|Mars|Avril|Mai|Juin|Juillet|Aout|Septembre|Octobre|Novembre|Decembre|janvier|fevrier|mars|avril|mai|juin|juillet|aout|septembre|octobre|novembre|decembre) ([0-9]{4}) ([0-1][0-9]|[2][0-3]):([0-5][0-9]):([0-5][0-9])/", $argv[1], $res))
+		echo mktime($res[5], $res[6], $res[7], change_month(ucfirst($res[3])), $res[2], $res[4]). "\n";
 	else
 		echo "Wrong Format\n";
 	exit;

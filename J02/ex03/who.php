@@ -1,5 +1,5 @@
 #!/usr/bin/php
-<?
+<?php
 date_default_timezone_set('CET');
 $handle = fopen("/var/run/utmpx", "r");
 while ($buffer = fread($handle, 628))
