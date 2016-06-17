@@ -11,13 +11,13 @@
 				<li>
 					<a href="#">Marques &rsaquo;</a>
 					<ul>
-						<li>Yamaha</li>
-						<li>Guzzi</li>
-						<li>Kawasaki</li>
-						<li>Suzuki</li>
-						<li>Ducati</li>
-						<li>Bmw</li>
-						<li>Triumph</li>
+						<a href="#"><li>Yamaha</li></a>
+						<a href="#"><li>Guzzi</li></a>
+						<a href="#"><li>Kawasaki</li></a>
+						<a href="#"><li>Suzuki</li></a>
+						<a href="#"><li>Ducati</li></a>
+						<a href="#"><li>Bmw</li></a>
+						<a href="#"><li>Triumph</li></a>
 					</ul>
 				</li>
 			</ul><br />
@@ -25,11 +25,11 @@
 				<li>
 					<a href="#">Ann&eacute;es  &rsaquo;</a>
 					<ul id="year">
-						<li>- 2009 -</li>
-						<li>- 2010 -</li>
-						<li>- 2012 -</li>
-						<li>- 2014 -</li>
-						<li>- 2015 -</li>
+						<a href="#"><li>- 2009 -</li></a>
+						<a href="#"><li>- 2010 -</li></a>
+						<a href="#"><li>- 2012 -</li></a>
+						<a href="#"><li>- 2014 -</li></a>
+						<a href="#"><li>- 2015 -</li></a>
 					</ul>
 				</li>
 			</ul><br />
@@ -37,10 +37,10 @@
 				<li>
 					<a href="#:\">Cylindr&eacute;es &rsaquo;</a>
 					<ul id="year">
-						<li>600cc</li>
-						<li>750cc</li>
-						<li>900cc</li>
-						<li>1200cc</li>
+						<a href="#"><li>600cc</li></a>
+						<a href="#"><li>750cc</li></a>
+						<a href="#"><li>900cc</li></a>
+						<a href="#"><li>1200cc</li></a>
 					</ul>
 				</li>
 			</ul><br /><br />
@@ -49,11 +49,11 @@
 				<li>
 					<a href="#">Casques &rsaquo;</a>
 					<ul>
-						<li>Caca</li>
-						<li>Caca</li>
-						<li>Caca</li>
-						<li>Caca</li>
-						<li>Caca</li>
+						<a href="#"><li>Caca</li></a>
+						<a href="#"><li>Caca</li></a>
+						<a href="#"><li>Caca</li></a>
+						<a href="#"><li>Caca</li></a>
+						<a href="#"><li>Caca</li></a>
 					</ul>
 				</li>
 			</ul><br />
@@ -61,11 +61,11 @@
 				<li>
 					<a href="#">Equipements &rsaquo;</a>
 					<ul>
-						<li>Caca</li>
-						<li>Caca</li>
-						<li>Caca</li>
-						<li>Caca</li>
-						<li>Caca</li>
+						<a href="#"><li>Caca</li></a>
+						<a href="#"><li>Caca</li></a>
+						<a href="#"><li>Caca</li></a>
+						<a href="#"><li>Caca</li></a>
+						<a href="#"><li>Caca</li></a>
 					</ul>
 				</li>
 			</ul><br /><br />
@@ -80,8 +80,9 @@
 				<a href="create.html" class="ident">S'inscrire</a><br /><p>Ou</p>
 				<a href="modif.html" class="ident">Modifier son mot de passe</a><br />
 			</div>
-			<div class="log"><br /><br />
-				<a href="#" class="panier">Mon panier</a>
+			<div class="log"><br />
+				<a href="#" class="panier">Mon panier</a><p>Total des achats:</p>
+				<input readonly type="text" name="total" value="12.5&#8364;" class="achat">
 			</div>
 		</div>
 	</body>

@@ -91,6 +91,7 @@ a {
 #menu li li {
 	background-color: #1C1713;
 	border: 1px solid #030000;
+	color: #fff;
 }
 
 #menu li li:hover {
@@ -151,7 +152,6 @@ a {
 	text-decoration: none;
 }
 
-.sub:hover {cursor:hand;}
 
 .modif {
 	margin: center;
@@ -182,6 +182,17 @@ p {
 	padding: 5px 5px 5px 5px;
 	margin: 0;
 }
+
+.achat {
+	font-size: 20px;
+	background-color: #AD3A3B;
+	border: 1px solid #942122;
+	color: #000;
+	padding: 5px 5px 5px 5px;
+	text-align: center;
+}
+
+.sub:hover {cursor:hand;}
 
 .ident:hover {background-color: #C75455;}
 
