@@ -49,11 +49,10 @@
 				<li>
 					<a href="#">Casques &rsaquo;</a>
 					<ul>
-						<a href="#"><li>Caca</li></a>
-						<a href="#"><li>Caca</li></a>
-						<a href="#"><li>Caca</li></a>
-						<a href="#"><li>Caca</li></a>
-						<a href="#"><li>Caca</li></a>
+						<a href="#"><li>Bell</li></a>
+						<a href="#"><li>Premier</li></a>
+						<a href="#"><li>Hjc</li></a>
+						<a href="#"><li>Shoei</li></a>
 					</ul>
 				</li>
 			</ul><br />
@@ -61,11 +60,9 @@
 				<li>
 					<a href="#">Equipements &rsaquo;</a>
 					<ul>
-						<a href="#"><li>Caca</li></a>
-						<a href="#"><li>Caca</li></a>
-						<a href="#"><li>Caca</li></a>
-						<a href="#"><li>Caca</li></a>
-						<a href="#"><li>Caca</li></a>
+						<a href="#"><li>Blouson</li></a>
+						<a href="#"><li>Bottes</li></a>
+						<a href="#"><li>Gants</li></a>
 					</ul>
 				</li>
 			</ul><br /><br />
