@@ -3,7 +3,7 @@ function auth($login, $passwd)
 {
 	$filename = '../private/passwd';
 	
-	if (!$login || !$login || !file_exists($filename))
+	if (!$login || !$passwd || !file_exists($filename))
 		return FALSE;
 	
 	$passwd = hash('whirlpool', $passwd);

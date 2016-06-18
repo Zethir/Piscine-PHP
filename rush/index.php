@@ -1,10 +1,11 @@
+<?php session_start();?>
 <html>
 	<head>
 		<title>Motorhead</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body>
-		<a href="http://e1r2p18.42.fr:8080/rush/index.php"><div class="banner">Motorhead</div></a>
+		<a href="index.php"><div class="banner">Motorhead</div></a>
 		<div class="leftmodule">
 			<div class="blocs">Moto:</div><br /><br />
 			<ul id="menu" class="classe">
@@ -68,7 +69,11 @@
 			</ul><br /><br />
 		</div>
 		<div class="rightmodule">
-			<form action"index.php" method="POST" class="log">
+<?php
+if ($_GET['msg'] != 'login')
+{
+?>
+			<form action="login.php" method="POST" class="log">
 			Identifiant: <br /><input type="text" name="login" value="" placeholder="Identifiant" class="sub"><br />
 			Mot de passe: <br /><input type="password" name ="passwd" value="" placeholder="Mot de passe" class="sub"><br /><br />
 			<input type="submit" name="submit" value="Connexion" class="sub">
@@ -77,6 +82,18 @@
 				<a href="create.html" class="ident">S'inscrire</a><br /><p>Ou</p>
 				<a href="modif.html" class="ident">Modifier son mot de passe</a><br />
 			</div>
+<?php } 
+else {
+?>
+			<div class="connect">
+				<p class="hello">Bonjour<p/>
+				<p class="hello"><?php echo $_SESSION['loggued_on_user'];?></p>
+				<p class="hello">Vous &ecirc;tes connect&eacute;</p>
+				<form action="logout.php" method="POST">
+					<input type="submit" name="submit" value="Logout" class="sub">
+				</form>
+			</div><br /><br />
+<?php } ?>
 			<div class="log"><br />
 				<a href="#" class="panier">Mon panier</a><p>Total des achats:</p>
 				<input readonly type="text" name="total" value="12.5&#8364;" class="achat">

@@ -7,7 +7,7 @@ mysqli_close($mysqli);
 $mysqli = mysqli_connect($mysqli_host, $mysqli_user, $mysqli_pass, $mysqli_db, $mysqli_port);
 $req = "CREATE TABLE IF NOT EXISTS `users` (`username` varchar(255) NOT NULL,`password` varchar(255) NOT NULL,`name` varchar(255) NOT NULL,`classe` int(11) NOT NULL,UNIQUE KEY `username` (`username`)) ENGINE=InnoDB DEFAULT CHARSET=utf8;";
 mysqli_query($mysqli, $req);
-$req = "INSERT INTO `users` (`username`, `password`, `name`, `classe`) VALUES('Charlelie', 'cboussau', 'Charlelie Boussaud', '3'),('client1', 'client1', 'Client1', '0'), ('client2', 'client2', 'Client2', '0');";
+$req = "INSERT INTO `users` (`username`, `password`, `name`, `classe`) VALUES('admin', '6a4e012bd9583858a5a6fa15f58bd86a25af266d3a4344f1ec2018b778f29ba83be86eb45e6dc204e11276f4a99eff4e2144fbe15e756c2c88e999649aae7d94', 'admin', '3'),('client1', 'client1', 'Client1', '0'), ('client2', 'client2', 'Client2', '0');";
 mysqli_query($mysqli, $req);
 $req = " CREATE TABLE IF NOT EXISTS `catalog` (`ID` int(11) NOT NULL AUTO_INCREMENT,`marque` text NOT NULL,`modele` text NOT NULL,`price` int(11) NOT NULL,`img` varchar(500) NOT NULL,`cylindree` text NOT NULL, `date` text NOT NULL, `stock` int(11) NOT NULL,PRIMARY KEY (`ID`)) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=15;";
 mysqli_query($mysqli, $req);
