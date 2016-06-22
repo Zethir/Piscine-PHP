@@ -31,6 +31,12 @@ if (!$login || !$passwd)
 		exit();
 	}
 	$_SESSION['loggued_on_user'] = $_POST['login'];
-	header("Refresh: 1; url=index.php?msg=login");
+	$_SESSION[$_POST[login]][panier] = $_SESSION[guest][panier];
+	$_SESSION[$_POST[login]][table] = $_SESSION[guest][table];
+	$_SESSION[guest][panier] = array();
+	$_SESSION[guest][table] = array();
+	echo '<META HTTP-EQUIV=REFRESH CONTENT="1;index.php">';
 	echo "Welcome\n";
+	mysqli_close($mysqli);
+	exit ();
 ?>

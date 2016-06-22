@@ -82,8 +82,6 @@ $req = "INSERT INTO `equipement` (`ID`, `marque`, `type`, `modele`, `price`, `im
 	."(22, 'Dainese', 'gants', 'Blackjack', '66', 'http://media09.motoblouz.com/images/catalogue/Gants-ete-Dainese-GUANTO-BLACKJACK-1.jpg', 'L', '3'),"
 	."(23, 'Dainese', 'gants', 'Blackjack', '66', 'http://media09.motoblouz.com/images/catalogue/Gants-ete-Dainese-GUANTO-BLACKJACK-1.jpg', 'XL', '3');";
 mysqli_query($mysqli, $req);
-
-echo "Install [OK]";
-
+echo "INSTALL [OK]\n";
 mysqli_close($mysqli);
 ?>

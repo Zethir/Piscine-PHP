@@ -27,8 +27,7 @@ else if ($row['password'] != $oldpw)
 	echo '<META HTTP-EQUIV=REFRESH CONTENT="2;modif.html">';
 	exit ();
 }
-
-$sql = "INSERT INTO users VALUES '$newpw'";
+$sql = "UPDATE `users` SET `password`='".$newpw."' WHERE `username`='".$login."';";
 mysqli_query($mysqli, $sql);
 mysqli_close($mysqli);
 header('Refresh: 1; url=index.php');

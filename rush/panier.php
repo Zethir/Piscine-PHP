@@ -1,8 +1,6 @@
-<?php 
-
-session_start();
-include './config.php';
-if ($_SESSION[loggued_on_user] === "")
+<?php session_start(); 
+	include './config.php';
+	if ($_SESSION[loggued_on_user] === "")
 		$user = "guest";
 	else
 		$user = $_SESSION[loggued_on_user];
@@ -10,20 +8,15 @@ if ($_SESSION[loggued_on_user] === "")
 		$_SESSION[$user][panier] = array();
 	if (!$_SESSION[$user][table])
 		$_SESSION[$user][table] = array();
-
-if ($_SESSION['db'] == NULL)
-{
-	$_SESSION['db'] = 1;
-	include 'install.php';
-}
 ?>
 <html>
-	<head>
-		<title>Motorhead</title>
-		<link rel="stylesheet" type="text/css" href="style.css">
-	</head>
-	<body>
-		<a href="index.php"><div class="banner">Motorhead</div></a>
+<head>
+	<title>Mon Panier</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<a href="index.php"><div class="banner">Motorhead</div></a>
 		<div class="leftmodule">
 			<div class="blocs">Moto:</div><br /><br />
 			<ul id="menu" class="classe">
@@ -131,7 +124,7 @@ if ($_SESSION['db'] == NULL)
 			</ul><br /><br />
 <?php
 
-$db = mysqli_connect($mysqli_host, $mysqli_user, $mysqli_pass, $mysqli_db, $mysqli_port);; 
+$db = mysqli_connect($mysqli_host, $mysqli_user, $mysqli_pass, $mysqli_db, $mysqli_port); 
 $sql = 'SELECT *' . ' FROM ' . '`users`';
 $req = mysqli_query($db, $sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysqli_error($db));
 
@@ -154,8 +147,92 @@ while($data = mysqli_fetch_row($req))
 	}
 }		
 ?>
-		</div>
-		<div class="rightmodule">
+</div>
+
+
+<?php
+	if ($_GET[validation] == "ok")
+	{
+		if ($user == "guest")
+		{
+			echo "You need to be connected to confirm your purchase.";
+			echo '<META HTTP-EQUIV=REFRESH CONTENT="2;index.php">';
+		}
+		else {
+			$_SESSION[$user][panier] = array();
+			$_SESSION[$user][table] = array();
+			echo "<div class='overall'>Your purchase has been confirmed.</div><br />";
+			echo '<META HTTP-EQUIV=REFRESH CONTENT="3;index.php">';
+		}
+	}
+	if ($_GET[action] === "del" && isset($_GET[index]))
+	{
+		unset($_SESSION[$user][panier][$_GET[index]]);
+		unset($_SESSION[$user][table][$_GET[index]]);
+		$_SESSION[$user][panier] = array_values($_SESSION[$user][panier]);
+		$_SESSION[$user][table] = array_values($_SESSION[$user][table]);
+	}
+	$i = 0;
+	echo "<div class='overall'>";
+	for ($i = 0; $i < count($_SESSION[$user][panier]); $i++) {
+		$db = mysqli_connect($mysqli_host, $mysqli_user, $mysqli_pass, $mysqli_db, $mysqli_port); 
+
+		$sql = 'SELECT *' . ' FROM ' . $_SESSION[$user][table][$i] . ' WHERE `id` = ' . $_SESSION[$user][panier][$i]; 
+
+		$req = mysqli_query($db, $sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysqli_error($db));
+		$data = mysqli_fetch_row($req);
+		if ($_SESSION[$user][table][$i] == "catalog")
+		{
+			$brand = $data[1];
+			$model = $data[2];
+			$price = $data[3];
+			$img_src = $data[4];
+			$cc = $data[5];
+			$date = $data[6];
+			echo "<table class='product'>\n";
+			echo "<td>";
+			echo "<img class='product_img' src='";
+			echo $img_src."'>";
+			echo "<p>Marque: " . $brand . "</p>";
+			echo "<p>Modéle: " . $model . "</p>";
+			echo "<p>Année de sortie: " . $date . "</p>";
+			echo "<p>Cylindrée: " . $cc . " cc" ."</p>";
+			echo "<p>Prix: " . $price . " $" . "</p>";
+			echo "<p>Supprimer du panier:<br /></p><a href='panier.php?action=del&index=";
+			echo $i;
+			echo "'><img class='icon' src='https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/512/multiply-.png'></a>";
+			echo "</td><tr>";
+			echo "</table>";
+		}
+		else
+		{
+			$brand = $data[1];
+			$type = $data[2];
+			$model = $data[3];
+			$price = $data[4];
+			$img_src = $data[5];
+			$size = $data[6];
+			echo "<table class='product'>\n";
+			echo "<td>";
+			echo "<img class='product_img' src='";
+			echo $img_src."'>";
+			echo "<p>Marque: " . $brand . "</p>";
+			echo "<p>Modéle: " . $model . "</p>";
+			echo "<p>Size: " . $size . "</p>";
+			echo "<p>Prix: " . $price . " $" . "</p>";
+			echo "<p>Supprimer du panier:<br /></p><a href='panier.php?action=del&index=";
+			echo $i;
+			echo "'><img class='icon' src='https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/512/multiply-.png'></a>";
+			echo "</td><tr>";
+			echo "</table>";
+		}
+	} 
+	echo '<a href=panier.php?validation=ok><input class="sub" type="submit" name="submit" value="Validation"/></a><br />';
+	echo "</div>";
+?>
+
+
+<div class="rightmodule">
 <?php
 if ($user == "guest")
 {
@@ -200,9 +277,8 @@ else {
 							$total += $data[4]; 
 						$i++;
 					}echo $total . "$ ";
-					echo $i . " articles";?>' 
-					class="achat">
+					echo $i . " articles";?>' class="achat">
 			</div>
 		</div>
-	</body>
+</body>
 </html>
