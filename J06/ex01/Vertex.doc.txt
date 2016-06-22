@@ -1,0 +1,20 @@
+<- Vertex ---------------------------------------------------------------------
+The Vertex class handles vertex.
+
+An instance can be contructed from either x, y, z:
+new Vertex( array( 'x' => 0.0, 'y' => 0.0, 'z' => 0.0) );
+
+Or x, y, z, w and color constitutives:
+new Vertex( array( 'x' => 0.0, 'y' => 0.0, 'z' => 0.0, 'w' => 1.0, 'color' => $color) );
+
+x, y, z, w constitutives and RGB values (class Color) are converted to intergers.
+Any other use is undefined behaviour.
+
+The class provides the following methods :
+
+Vertex 	__construct(array $tab);
+Check the data given in the main and output those if $verbose = TRUE.
+
+Vertex __toString();
+Output the result.
+--------------------------------------------------------------------- Vertex ->
